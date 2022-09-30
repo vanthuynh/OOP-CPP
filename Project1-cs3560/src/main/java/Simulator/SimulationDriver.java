@@ -17,28 +17,29 @@ public class SimulationDriver {
 
         /* Configure question #1 */
         MultipleChoiceQuestion question1 = new MultipleChoiceQuestion();
-        question1.setContext("How many ways to drive to CPP ?");
+        question1.setContext("1. Which are correct main features of Object Oriented Programming?");
 
         question1.setAnswers(new ArrayList<String>(){
             {
-                add("1");
-                add("3");
-                add("7");
+                add("Inheritance ");
+                add("Polymorphism");
+                add("Abstraction ");
             }
         });
 
         System.out.println(question1.getContext());
-        displayChoices("1","3","4","7", question1.isMultipleChoice);
+        displayChoices("Inheritance","Procedural","Polymorphism","Abstraction", question1.isMultipleChoice);
 
         /* Have students vote on question #1 */
         MCVS round1 = new MCVS(question1);
 
         System.out.println();
-        round1.submit(student1, new ArrayList<String>(Arrays.asList("4","7")));
-        round1.submit(student4, new ArrayList<String>(Arrays.asList("1","7")));
-        round1.submit(student1, new ArrayList<String>(Arrays.asList("1","3","7")));
+        round1.submit(student1, new ArrayList<String>(Arrays.asList("Polymorphism","Abstraction")));
+        round1.submit(student4, new ArrayList<String>(Arrays.asList("Inheritance","Abstraction")));
+        round1.submit(student1, new ArrayList<String>(Arrays.asList("Inheritance","Abstraction","Polymorphism")));
         round1.submit(student2, new ArrayList<String>());
-        round1.submit(student3, new ArrayList<String>(Arrays.asList("1","7","3")));
+        round1.submit(student3, new ArrayList<String>(Arrays.asList("Inheritance","Polymorphism","Procedural")));
+        round1.submit(student5, new ArrayList<String>(Arrays.asList("Inheritance","Polymorphism","Abstraction")));
 
         System.out.println();
         round1.isValid(student1);
@@ -52,22 +53,24 @@ public class SimulationDriver {
 
         /* Configure question #2 */
         SingleChoiceQuestion question2 = new SingleChoiceQuestion();
-        question2.setContext("What's the mascot for CPP?");
+        question2.setContext("2. Who created the time machine in Avengers Endgame?");
 
-        question2.setAnswer("Horse");
+        question2.setAnswer("Ironman");
 
         System.out.println(question2.getContext());
-        displayChoices("Elephant","Anteater","Horse","Bear", question2.isMultipleChoice);
+        displayChoices("Smart Hulk","Ironman","Antman","Vision", question2.isMultipleChoice);
 
         /* Have students vote on question #2 */
         SCVS round2 = new SCVS(question2);
 
         System.out.println();
-        round2.submit(student3,"Anteater" );
-        round2.submit(student2,"Bear" );
-        round2.submit(student1,"Elephant" );
-        round2.submit(student4, "Anteater");
-        round2.submit(student3,"Horse" );
+        round2.submit(student3,"Vision" );
+        round2.submit(student2,"Smart Hulk" );
+        round2.submit(student1,"Vision" );
+        round2.submit(student4, "Antman");
+        round2.submit(student3,"Ironman" );
+        round2.submit(student5,"Ironman" );
+        round2.submit(student1,"Vision" );
 
         System.out.println();
         round2.isValid(student1);
