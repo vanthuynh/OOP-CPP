@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class VotingService {
-    Hashtable<String,Integer> stats = new Hashtable<>();
-    List<Student> students = new ArrayList<>();
+    Hashtable<String,Integer> stats = new Hashtable<>(); // frequency map to keep score
+    List<Student> students = new ArrayList<>(); // list of student objects
     Question question;
 
     VotingService() {
@@ -24,11 +24,20 @@ public class VotingService {
     public void printStats() {
         System.out.println();
         System.out.println("Stats outcome...");
+        System.out.println("============================================");
         for(String answer : stats.keySet()) {
-            System.out.println(answer + " : " + stats.get(answer));
+            int total = stats.get(answer);
+            System.out.println(answer + " : " + prettifyStats(total) + "(" + total + ")");
         }
         System.out.println("============================================");
         System.out.println();
+    }
+    private String prettifyStats(Integer num) {
+        String result = "";
+        for (int i = 0; i < num; ++i) {
+            result += "* ";
+        }
+        return result;
     }
 }
 
