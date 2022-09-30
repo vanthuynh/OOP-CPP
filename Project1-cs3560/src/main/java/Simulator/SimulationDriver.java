@@ -81,6 +81,36 @@ public class SimulationDriver {
         /* Print stats #2 */
         round2.printStats();
 
+
+        /* Configure question #3 */
+        SingleChoiceQuestion question3 = new SingleChoiceQuestion();
+        question3.setContext("3. How many interview rounds for Amazon SWE Intern Summer 2023?");
+
+        question3.setAnswer("2");
+
+        System.out.println(question3.getContext());
+        displayTwoChoices("1","2", question3.isMultipleChoice);
+
+        /* Have students vote on question #2 */
+        SCVS round3 = new SCVS(question3);
+
+        System.out.println();
+        round3.submit(student3,"1" );
+        round3.submit(student2,"1" );
+        round3.submit(student1,"1" );
+        round3.submit(student4, "1");
+        round3.submit(student3,"2" );
+        round3.submit(student5,"2" );
+        round3.submit(student1,"2" );
+
+        System.out.println();
+        round3.isValid(student1);
+        round3.isValid(student2);
+        round3.isValid(student3);
+        round3.isValid(student4);
+
+        /* Print stats #2 */
+        round3.printStats();
     }
 
     public static void  displayChoices(String str1, String str2, String str3, String str4, boolean isMultipleChoice) {
@@ -90,5 +120,10 @@ public class SimulationDriver {
         System.out.println("C - " + str3);
         System.out.println("D - " + str4);
 
+    }
+    public static void  displayTwoChoices(String str1, String str2, boolean isMultipleChoice) {
+        System.out.println(isMultipleChoice ? "Please choose multiple answers if needed." : "Please choose one option only.");
+        System.out.println("A - " + str1);
+        System.out.println("B - " + str2);
     }
 }
