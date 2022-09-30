@@ -7,11 +7,12 @@ public class SimulationDriver {
         /* Generate students randomly */
         Random rand = new Random();
 
-        Student student1 = new Student(Integer.toString(rand.nextInt(1000)), "David");
-        Student student2 = new Student(Integer.toString(rand.nextInt(1000)), "Kate");
-        Student student3 = new Student(Integer.toString(rand.nextInt(1000)), "John");
-        Student student4 = new Student(Integer.toString(rand.nextInt(1000)), "Mary");
-        Student student5 = new Student(Integer.toString(rand.nextInt(1000)), "Joe");
+        Student student1 = new Student(Integer.toString(rand.nextInt(1000)), "Luke");
+        Student student2 = new Student(Integer.toString(rand.nextInt(1000)), "Vader");
+        Student student3 = new Student(Integer.toString(rand.nextInt(1000)), "Obiwan");
+        Student student4 = new Student(Integer.toString(rand.nextInt(1000)), "Cassian");
+        Student student5 = new Student(Integer.toString(rand.nextInt(1000)), "Chewbacca");
+        Student student6 = new Student(Integer.toString(rand.nextInt(1000)), "Han Solo");
 
 
         /* Configure question #1 */
@@ -81,10 +82,10 @@ public class SimulationDriver {
 
     public static void  displayChoices(String str1, String str2, String str3, String str4, boolean isMultipleChoice) {
         System.out.println(isMultipleChoice ? "Please choose multiple answers if needed." : "Please choose one option only.");
-        System.out.println("- " + str1);
-        System.out.println("- " + str2);
-        System.out.println("- " + str3);
-        System.out.println("- " + str4);
+        System.out.println("A - " + str1);
+        System.out.println("B - " + str2);
+        System.out.println("C - " + str3);
+        System.out.println("D - " + str4);
 
     }
 }

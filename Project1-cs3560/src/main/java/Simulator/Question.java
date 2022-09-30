@@ -70,7 +70,7 @@ class MultipleChoiceQuestion extends Question {
     /**
      * Method that check if student's answer is correct or not
      * @param studentAnswers list of answers from student
-     * @return
+     * @return True if student's answer is correct, False otherwise
      */
     public boolean isCorrect(List<String> studentAnswers) {
         for(String studentAnswer : studentAnswers) {
@@ -101,7 +101,7 @@ class SingleChoiceQuestion extends Question {
 
     /**
      * GET method
-     * @return answer provided answer
+     * @return single answer
      */
     public String getAnswer() {
         return answer == null ? "Please set answer first" : answer;
@@ -109,8 +109,8 @@ class SingleChoiceQuestion extends Question {
 
     /**
      * Method that check if student's answer is correct or not
-     * @param studentAnswer list of answers from student
-     * @return
+     * @param studentAnswer single answer from student
+     * @return True if student's answer is correct, False otherwise
      */
     public boolean isCorrect(String studentAnswer) {
         return this.answer.equals(studentAnswer);
